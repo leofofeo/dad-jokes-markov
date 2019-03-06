@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const data = require('../models/markov');
+const data = require('../models/generator');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log('brap brap');
+  console.log(data);
   res.render('index', 
   { 
     title: 'Dad jokes generator - is this thing on?',

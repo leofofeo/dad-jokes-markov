@@ -9,7 +9,6 @@ const createJokeArray = data => {
 }
 
 const createWordTable = jokes => {
-    // console.log(jokes);
     
     let wordTable = [];
     let wordSet = [];
@@ -24,8 +23,6 @@ const createWordTable = jokes => {
             return;
         });
     }
-
-    console.log('wordTableSet: ', wordSet.length);
     const frequencyTable = createFrequencyTable(wordTable, wordSet);
 
     return frequencyTable;
@@ -44,7 +41,6 @@ const createWordTable = jokes => {
                 return nextWords.push(word);
             }
         })
-        console.log('key: ', key.toString(), ' value: ', nextWords);
         frequencyTable.set(key, nextWords);
     });
 
@@ -53,9 +49,16 @@ const createWordTable = jokes => {
 
 const testAll = data => {
     const jokes = createJokeArray(data);
-    const wordTable = createWordTable(jokes);
-    // console.log('wordTable: ', wordTable);
-    return wordTable;
+    const frequencyTable = createWordTable(jokes);
+    console.log(frequencyTable);
+
+    const newFrequencyTable = []
+    frequencyTable.forEach(key => {
+        const values = frequencyTable.get(key);
+        newFrequencyTable.push({ 'key': key,
+            'values': values});
+    });
+    return newFrequencyTable;
 }
 
 

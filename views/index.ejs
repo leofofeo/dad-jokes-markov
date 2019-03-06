@@ -1,5 +1,10 @@
 <%- include('header') %>
     <h1><%= title %></h1>
     <p>Brap brap to <%= title %></p>
-    <p><%= data %></p>
+    <p>
+        <% for (item of data) { %>
+            <%= item.key %>
+            <%= item.values %>
+        <% } %>
+    </p>
 <%- include('footer') %>
