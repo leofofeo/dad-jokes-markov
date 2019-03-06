@@ -1,3 +1,26 @@
+const { Random } = require("random-js");
+const baseUrl = 'https://icanhazdadjoke.com/search?limit=30&page=';
+const axios = require('axios');
+axios.defaults.headers.get['Accept'] = 'application/json'
+const pageRange = Array.apply(null, Array(10)).map((_, i) => {return i + 1});
+
+const getJSONData = () => {
+    console.log('starting json call');
+    let jsonData = [];
+        for (let page of pageRange) {
+            try {
+                pageData = axios.get(baseUrl + page);
+                jsonData.concat(pageData.data.results);
+            } catch (err){
+                console.log(err);
+            }
+        }
+    console.log(jsonData);
+    return jsonData;
+}
+
+// initialJSONData = getJSONData();
+
 initialJSONData = {
     "current_page": 2,
     "limit": 30,

@@ -3,7 +3,7 @@ const buckets = require('buckets-js');
 
 
 const createJokeArray = data => {
-    return data.results.map(result => {
+    return  data.results.map(result => {
         return result.joke;
     })
 }
@@ -47,7 +47,7 @@ const createWordTable = jokes => {
     return frequencyTable;
  }
 
-const testAll = data => {
+const formatTableData = data => {
     const jokes = createJokeArray(data);
     const frequencyTable = createWordTable(jokes);
 
@@ -61,4 +61,4 @@ const testAll = data => {
 }
 
 
-module.exports = testAll(data);
+module.exports = formatTableData(data);

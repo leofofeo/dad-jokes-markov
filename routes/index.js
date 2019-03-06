@@ -8,9 +8,7 @@ express.locals = {
   ]
 }
 
-router.get('/', (req, res, next) => {
-  console.log('from get');
-  console.log(generator.getDadJoke());
+router.get('/', async (req, res, next) => {
   let dadJoke = '';
   if (express.locals.dadJokes.length > 0) {
     dadJoke = express.locals.dadJokes[express.locals.dadJokes.length - 1];
@@ -25,7 +23,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/dad-joke', (req, res, next) => {
-  console.log('from dad-joke');
   const newDadJoke = generator.getDadJoke();
   express.locals.dadJokes.push(newDadJoke);
   res.redirect('/');
