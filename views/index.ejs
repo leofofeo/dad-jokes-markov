@@ -1,14 +1,17 @@
 <%- include('header') %>
-    <h1><%= title %></h1>
     
-    <p>
-        <form action="/dad-joke" method="GET">
-            <button class="get-dad-joke-btn" type='submit'>
-                    Hear a dad joke!
-            </button>
-        </form>
-    </p>
-    <p class="dad-joke">
-        <%= dadJoke %>
-    </p>
+    <div class="ui raised very padded text container segment">
+        <h1 class="ui header"><%= title %></h1>
+        <div>
+            <form action="/dad-joke" method="GET">
+                <button class="get-dad-joke-btn ui primary violet button aligned center" type='submit'>
+                        Hear a dad joke!
+                </button>
+            </form>
+        </div>
+        <div class="joke-box ui blue segment">
+            <%= dadJoke %>
+        </div>
+    </div>
+
 <%- include('footer') %>
