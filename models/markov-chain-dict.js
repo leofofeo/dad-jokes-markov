@@ -50,7 +50,6 @@ const createWordTable = jokes => {
 const testAll = data => {
     const jokes = createJokeArray(data);
     const frequencyTable = createWordTable(jokes);
-    console.log(frequencyTable);
 
     const newFrequencyTable = []
     frequencyTable.forEach(key => {

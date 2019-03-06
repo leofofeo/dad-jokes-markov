@@ -1,11 +1,13 @@
 <%- include('header') %>
     <h1><%= title %></h1>
     <p>
-        <button class="get-dad-joke-btn">
-            Hear a dad joke!
-        </button>
+        <form action="/dad-joke" method="GET">
+            <button class="get-dad-joke-btn" type='submit'>
+                    Hear a dad joke!
+            </button>
+        </form>
     </p>
     <p class="dad-joke">
-
+        <%= dadJoke %>
     </p>
 <%- include('footer') %>
