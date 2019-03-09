@@ -4,12 +4,12 @@ const axios = require('axios');
 axios.defaults.headers.get['Accept'] = 'application/json'
 const pageRange = Array.apply(null, Array(10)).map((_, i) => {return i + 1});
 
-const getJSONData = () => {
+const getJSONData = async () => {
     console.log('starting json call');
     let jsonData = [];
         for (let page of pageRange) {
             try {
-                pageData = axios.get(baseUrl + page);
+                pageData = await axios.get(baseUrl + page);
                 jsonData.concat(pageData.data.results);
             } catch (err){
                 console.log(err);
@@ -378,6 +378,246 @@ initialJSONData = {
         {
             "id": "99UDQZgyIBd",
             "joke": "Two satellites decided to get married. The wedding wasn't much, but the reception was incredible."
+        },
+        {
+            "id": "Cd2gFdFQKuc",
+            "joke": "Child: Dad, make me a sandwich. Dad: Poof! You're a sandwich."
+        },
+        {
+            "id": "ClGY8xc2EBd",
+            "joke": "Why are graveyards so noisy? Because of all the coffin."
+        },
+        {
+            "id": "CtWgqjbMeib",
+            "joke": "What kind of bagel can fly? A plain bagel."
+        },
+        {
+            "id": "D5E6USfNmb",
+            "joke": "How many apples grow on a tree? All of them!"
+        },
+        {
+            "id": "D5wAA5o4TCd",
+            "joke": "What do you call a careful wolf? Aware wolf."
+        },
+        {
+            "id": "DAskq4oWSvc",
+            "joke": "I was just looking at my ceiling. Not sure if it’s the best ceiling in the world, but it’s definitely up there."
+        },
+        {
+            "id": "DIeFtkVvHlb",
+            "joke": "Why do valley girls hang out in odd numbered groups? Because they can't even."
+        },
+        {
+            "id": "DIeaUDlbUDd",
+            "joke": "“My Dog has no nose.” “How does he smell?” “Awful”"
+        },
+        {
+            "id": "DImrciqWSCd",
+            "joke": "What do you call a cow with no legs? Ground beef."
+        },
+        {
+            "id": "DY8UvkqHexc",
+            "joke": "Why did the half blind man fall in the well? Because he couldn't see that well!"
+        },
+        {
+            "id": "DYLukyIY8Ed",
+            "joke": "As I suspected, someone has been adding soil to my garden. The plot thickens."
+        },
+        {
+            "id": "Dt4hNJJmykb",
+            "joke": "It’s hard to explain puns to kleptomaniacs, because they take everything literally."
+        },
+        {
+            "id": "DtWSnydN7h",
+            "joke": "It's difficult to say what my wife does, she sells sea shells by the sea shore."
+        },
+        {
+            "id": "DtcaMmWDImb",
+            "joke": "Why did Dracula lie in the wrong coffin? He made a grave mistake."
+        },
+        {
+            "id": "EBAsPfiNuzd",
+            "joke": "What did one plate say to the other plate? Dinner is on me!"
+        },
+        {
+            "id": "EBQfiyXD5ob",
+            "joke": "what do you call a dog that can do magic tricks? a labracadabrador"
+        },
+        {
+            "id": "EIJmGY8Etrc",
+            "joke": "Doctor: Do you want to hear the good news or the bad news?\r\nPatient: Good news please.\r\nDoctor: we're naming a disease after you."
+        },
+        {
+            "id": "EQKZDIeah",
+            "joke": "Atheism is a non-prophet organisation."
+        },
+        {
+            "id": "EdpjyXSfNCd",
+            "joke": "What do you call a monkey in a mine field? A babooooom!\n"
+        },
+        {
+            "id": "ElbaF6wHlyd",
+            "joke": "I cut my finger cutting cheese. I know it may be a cheesy story but I feel grate now."
+        },
+        {
+            "id": "ElyXS0gFBAd",
+            "joke": "How do you steal a coat? You jacket."
+        },
+        {
+            "id": "EtzscNuk3Ed",
+            "joke": "Why don't you find hippopotamuses hiding in trees?\r\nThey're really good at it."
+        },
+        {
+            "id": "F6wPR71Dtzd",
+            "joke": "I’m reading a book on the history of glue – can’t put it down."
+        },
+        {
+            "id": "FBQ7wskbMmb",
+            "joke": "Want to hear a joke about construction? Nah, I'm still working on it."
+        },
+        {
+            "id": "FBskq4MRnrc",
+            "joke": "Just watched a documentary about beavers… It was the best damn program I’ve ever seen."
+        },
+        {
+            "id": "FIY8992wskb",
+            "joke": "Why do choirs keep buckets handy? So they can carry their tune"
+        },
+        {
+            "id": "FImyA5EIBAd",
+            "joke": "Did you hear about the kidnapping at school? It's ok, he woke up."
+        },
+        {
+            "id": "FYTv41LmbFd",
+            "joke": "You will never guess what Elsa did to the balloon. She let it go."
+        },
+        {
+            "id": "FdN7przPCtc",
+            "joke": "You can't run through a camp site. You can only ran, because it's past tents."
+        },
+        {
+            "id": "FdN7wcxAskb",
+            "joke": "They're making a movie about clocks. It's about time"
+        },
+        {
+            "id": "IYgiyIR7hib",
+            "joke": "What do you get when you cross a rabbit with a water hose? Hare spray."
+        },
+        {
+            "id": "IeiyIRSnbxc",
+            "joke": "I applied to be a doorman but didn't get the job due to lack of experience. That surprised me, I thought it was an entry level position."
+        },
+        {
+            "id": "IexXD5TnGBd",
+            "joke": "I knew a guy who collected candy canes, they were all in mint condition"
+        },
+        {
+            "id": "It4Etrjiqrc",
+            "joke": "Why does a chicken coop only have two doors? Because if it had four doors it would be a chicken sedan."
+        },
+        {
+            "id": "ItWLR792Ed",
+            "joke": "\"I'll call you later.\" Don't call me later, call me Dad."
+        },
+        {
+            "id": "ItWSnbUfVnb",
+            "joke": "Why did the teddy bear say “no” to dessert? Because she was stuffed."
+        },
+        {
+            "id": "JBs4T79Edpb",
+            "joke": "Breaking news! Energizer Bunny arrested – charged with battery."
+        },
+        {
+            "id": "JJ61L61Lusc",
+            "joke": "How many bones are in the human hand? A handful of them."
+        },
+        {
+            "id": "JeF69xAQSnb",
+            "joke": "A red and a blue ship have just collided in the Caribbean. Apparently the survivors are marooned."
+        },
+        {
+            "id": "JeVDI6EBIe",
+            "joke": "I've just written a song about a tortilla. Well, it is more of a rap really."
+        },
+        {
+            "id": "JeaxXvkyPf",
+            "joke": "Can February march? No, but April may."
+        },
+        {
+            "id": "JmGtkyIJeqc",
+            "joke": "So a duck walks into a pharmacy and says “Give me some chap-stick… and put it on my bill”"
+        },
+        {
+            "id": "JmjbxkGJBAd",
+            "joke": "Egyptians claimed to invent the guitar, but they were such lyres.\ufeff"
+        },
+        {
+            "id": "JtcxXS0ozAd",
+            "joke": "Toasters were the first form of pop-up notifications."
+        },
+        {
+            "id": "K6UKmykqrjb",
+            "joke": "What is a witch's favorite subject in school? Spelling!"
+        },
+        {
+            "id": "K6USKBXvcib",
+            "joke": "What do you call a crowd of chess players bragging about their wins in a hotel lobby? Chess nuts boasting in an open foyer."
+        },
+        {
+            "id": "K6UvXD5Mexc",
+            "joke": "Which side of the chicken has more feathers? The outside."
+        },
+        {
+            "id": "KBsWnO711Dd",
+            "joke": "Remember, the best angle to approach a problem from is the \"try\" angle."
+        },
+        {
+            "id": "KBsrz5ws4Ed",
+            "joke": "Why are fish easy to weigh? Because they have their own scales."
+        },
+        {
+            "id": "KJJtPuPKJe",
+            "joke": "What did the scarf say to the hat? You go on ahead, I am going to hang around a bit longer."
+        },
+        {
+            "id": "KJmW8h3oWnb",
+            "joke": "Did you hear about the scientist who was lab partners with a pot of boiling water? He had a very esteemed colleague."
+        },
+        {
+            "id": "KJmrOKeNexc",
+            "joke": "This morning I was wondering where the sun was, but then it dawned on me."
+        },
+        {
+            "id": "KZDtkG6pjqc",
+            "joke": "Writing with a broken pencil is pointless."
+        },
+        {
+            "id": "KeqOmOZDYDd",
+            "joke": "Why is it so windy inside an arena? All those fans."
+        },
+        {
+            "id": "KmW8hFlV0ob",
+            "joke": "A panda walks into a bar and says to the bartender “I’ll have a Scotch and . . . . . . . . . . . . . . Coke thank you”. \r\n\r\n“Sure thing” the bartender replies and asks “but what’s with the big pause?” \r\n\r\nThe panda holds up his hands and says “I was born with them”"
+        },
+        {
+            "id": "L6UnyP7Unyd",
+            "joke": "“Doctor, I’ve broken my arm in several places” Doctor “Well don’t go to those places.”"
+        },
+        {
+            "id": "LB5wHQSvzAd",
+            "joke": "Where was the Declaration of Independence signed?\r\n\r\nAt the bottom! "
+        },
+        {
+            "id": "LBAQ79MJmb",
+            "joke": "What’s the difference between an African elephant and an Indian elephant? About 5000 miles."
+        },
+        {
+            "id": "LBdUvcFB5h",
+            "joke": "Two peanuts were walking down the street. One was a salted"
+        },
+        {
+            "id": "LRf2obFBskb",
+            "joke": "Don’t interrupt someone working intently on a puzzle. Chances are, you’ll hear some crosswords."
         }
     ],
     "search_term": "",

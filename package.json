@@ -1,6 +1,9 @@
 {
   "name": "dad-jokes",
   "version": "0.0.0",
+  "engines": {
+    "node": "11.10.0"
+  },
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
@@ -8,6 +11,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "buckets-js": "^1.98.2",
+    "compression": "^1.7.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
