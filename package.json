@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "npm start"
+    "start": "bin/www"
   },
   "dependencies": {
     "axios": "^0.18.0",
