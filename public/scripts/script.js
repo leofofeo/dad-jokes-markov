@@ -1,5 +1,6 @@
 $('document').ready(() => {
-    
+ 
+
 });
 
 $('form').on('submit', (event) => {
@@ -10,9 +11,9 @@ $('form').on('submit', (event) => {
         'success' : ({ results }) => {              
             updateDadJoke(results);
         },
-        'error' : (req, error) => 
+        'error' : (req, err) => 
         {
-            console.log("Request: "+JSON.stringify(request));
+            console.log(`Request: ${JSON.stringify(req)}`);
         }
     });
 });

@@ -5,18 +5,20 @@ axios.defaults.headers.get['Accept'] = 'application/json'
 const pageRange = Array.apply(null, Array(10)).map((_, i) => {return i + 1});
 
 const getJSONData = async () => {
-    console.log('starting json call');
-    let jsonData = [];
-        for (let page of pageRange) {
-            try {
-                pageData = await axios.get(baseUrl + page);
-                jsonData.concat(pageData.data.results);
-            } catch (err){
-                console.log(err);
-            }
-        }
-    console.log(jsonData);
-    return jsonData;
+    let jsonData = {results: []};
+    let promises = [];
+    for (let page of pageRange) {
+            promises.push(axios.get(baseUrl + page));
+    }
+    return Promise.all(promises)
+    .then(data => {
+        data.forEach( dataPoint => {
+            jsonData.results.push(dataPoint.data.results);
+        });
+        return jsonData;
+    })
+    .then(jsonData => jsonData)
+    .catch(err => { console.log(err) });
 }
 
 // initialJSONData = getJSONData();

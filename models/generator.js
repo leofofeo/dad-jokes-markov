@@ -1,4 +1,4 @@
-const jokesFrequencyTable = require("./markov-chain-dict");
+const jokesFrequencyTable = require("./markov-chain-dict"); 
 const buckets = require("buckets-js");
 const { Random } = require("random-js");
 const random = new Random();

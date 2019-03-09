@@ -1,7 +1,6 @@
 const data = require('./model-data');
 const buckets = require('buckets-js');
 
-
 const createJokeArray = data => {
     return  data.results.map(result => {
         return result.joke;
