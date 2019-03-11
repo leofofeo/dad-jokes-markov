@@ -1,4 +1,4 @@
-const jokesFrequencyTable = require("./markov-chain-dict"); 
+const jokesFrequencyTable = require("./markov-chain-dict");
 const buckets = require("buckets-js");
 const { Random } = require("random-js");
 const random = new Random();
@@ -67,13 +67,15 @@ const formatDadJokeArray = array => {
 };
 
 exports.getDadJoke = () => {
-  const frequencyTable = convertArrayToDict(jokesFrequencyTable);
-  const initialStartingIndex = random.integer(0, frequencyTable.size());
-  const initialWord = getInitialWord(
-    frequencyTable.keys(),
-    initialStartingIndex
-  );
-  const dadJokeArray = generateDadJoke(frequencyTable, [initialWord]);
-  const formattedDadJoke = formatDadJokeArray(dadJokeArray);
-  return formattedDadJoke;
+  return jokesFrequencyTable.then(jokesFrequencyTable => {
+    const frequencyTable = convertArrayToDict(jokesFrequencyTable);
+    const initialStartingIndex = random.integer(0, frequencyTable.size());
+    const initialWord = getInitialWord(
+      frequencyTable.keys(),
+      initialStartingIndex
+    );
+    const dadJokeArray = generateDadJoke(frequencyTable, [initialWord]);
+    const formattedDadJoke = formatDadJokeArray(dadJokeArray);
+    return formattedDadJoke;
+  }).catch(err => console.log(err));
 };
